@@ -3,11 +3,10 @@
 
 Console.WriteLine("Введите количество элементов массива");
 int size  = Convert.ToInt32(Console.ReadLine());
-string[] array = new string[size];
 
+string[] array = new string[size];
 string[] CreateArray(int size)
-{         
-    
+{           
     for (int i = 0; i < array.Length; i++)
     {
         Console.WriteLine("Введите элемент массива");
@@ -16,9 +15,9 @@ string[] CreateArray(int size)
     return array; 
 }
 
+
 static void PrintArray(string[] array)
 {
-    Console.WriteLine("Заданный Вами массив:");
     Console.Write("[");
     for (int i = 0; i < array.Length; i++)
     {
@@ -28,8 +27,32 @@ static void PrintArray(string[] array)
     Console.WriteLine("]");
 }
 
+
+string[] CreateNewArray(string[] array)
+{
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++) 
+    {
+        int index=0;
+        if (array[i].Length <=3) 
+        {
+            Console.Write($"{array[i]}, ");
+            index++;
+        }
+    }
+    Console.Write("]");
+    return array; 
+}
+
+Console.WriteLine("-------------------------------");
 CreateArray(size);
+Console.WriteLine("-------------------------------");
+Console.WriteLine("Заданный Вами массив:");
 PrintArray(array);
+Console.WriteLine("-------------------------------");
+Console.WriteLine("Полученный массив:");
+CreateNewArray(array);
+
 
 
 
